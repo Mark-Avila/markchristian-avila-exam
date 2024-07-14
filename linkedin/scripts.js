@@ -316,8 +316,8 @@ function renderPosts(page) {
   const mobileWrapper = document.getElementById("postsMobile");
 
   // Get the start and end indecies for next number of posts
-  const start = (page - 1) * (itemsPerPage + 1);
-  const end = start + (itemsPerPage + 1);
+  const start = (page - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
 
   posts.slice(start, end).forEach((post) => {
     let postHTML = createPostHTML(post);
