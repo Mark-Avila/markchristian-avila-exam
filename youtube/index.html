@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Youtube</title>
+  </head>
+  <body>
+    <header>
+      <div id="headerBanner">
+        <img src="./assets/banner.jpg" alt="banner-img" />
+      </div>
+      <div id="headerBody">
+        <div id="headerAvatar">
+          <img src="./assets/profile.jpg" alt="header-profile-picture" />
+        </div>
+        <div id="headerDetails">
+          <p id="headerName">SociableKIT</p>
+          <div id="headerStats">
+            <div class="header__stat">
+              <p class="header__statval">617</p>
+              <p class="header__statlabel">Subscribers</p>
+            </div>
+            <div class="header__stat">
+              <p class="header__statval">1.3k</p>
+              <p class="header__statlabel">Videos</p>
+            </div>
+            <div class="header__stat">
+              <p class="header__statval">458.8k</p>
+              <p class="header__statlabel">Views</p>
+            </div>
+          </div>
+        </div>
+        <button id="headerSub">Subscribe</button>
+      </div>
+    </header>
+    <div class="divider"></div>
+    <main>
+      <section id="featuredVideos" class="video__section">
+        <div class="video__category">
+          <h1>Featured Videos</h1>
+        </div>
+        <div class="video__arrows">
+          <button class="left" onclick="scrollItems(-1)">
+            <img src="./assets/angle-right.svg" alt="arrow-left" />
+          </button>
+          <button class="right" onclick="scrollItems(1)">
+            <img src="./assets/angle-right.svg" alt="arrow-right" />
+          </button>
+        </div>
+        <div class="video__list --horizontal" id="featuredList"></div>
+      </section>
+      <section id="otherVideos" class="video__section">
+        <div class="video__category">
+          <h1>Recent Videos</h1>
+        </div>
+        <div class="video__list --vertical"></div>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

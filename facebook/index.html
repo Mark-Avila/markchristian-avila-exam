@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Facebook Events</title>
+  </head>
+  <body>
+    <header>
+      <h1 id="headerTitle">Events</h1>
+      <div id="headerInputs">
+        <div id="headerDate">
+          <button id="dateLeft" onclick="shiftMonth('left')">
+            <img src="./assets/angle-right.svg" alt="date-btn-left" />
+          </button>
+          <div id="dateCurrent">
+            <input
+              type="date"
+              onchange="handleDateChange(event)"
+              name="eventDateInput"
+              id="dateInput"
+            />
+          </div>
+          <button id="dateRight" onclick="shiftMonth('right')">
+            <img src="./assets/angle-right.svg" alt="date-btn-right" />
+          </button>
+        </div>
+        <div id="headerSearch">
+          <input
+            type="text"
+            name="eventSearchInput"
+            id="searchInput"
+            placeholder="Search Event"
+            oninput="debounce(handleSearchChange(event), 200)"
+          />
+        </div>
+      </div>
+
+      <h1 id="headerLabel">Events from August 1, 2024</h1>
+    </header>
+
+    <!-- Wrapper for events, rendered via JS -->
+    <main id="eventsList"></main>
+
+    <!-- Modal, hidden by default -->
+    <div id="modalBackground">
+      <div id="modal">
+        <div id="modalImage">
+          <button id="modalCloseMobile" onclick="closeModal()">
+            <img src="./assets/xmark.svg" alt="modal-close-btn" />
+          </button>
+          <img id="modalImageSrc" src="./assets/thumb1.jpg" alt="modal-image" />
+        </div>
+        <div id="modalBody">
+          <button id="modalClose" onclick="closeModal()">
+            <img src="./assets/xmark.svg" alt="modal-close-btn" />
+          </button>
+          <div class="modal__item">
+            <h1>Title</h1>
+            <p id="modalTitle"></p>
+          </div>
+          <div class="modal__item">
+            <h1>Host</h1>
+            <p id="modalHost"></p>
+          </div>
+          <div class="modal__item">
+            <h1>Date and Time</h1>
+            <p id="modalDatetime"></p>
+          </div>
+          <div class="modal__item">
+            <h1>Description</h1>
+            <p id="modalDescription"></p>
+          </div>
+          <div class="modal__item">
+            <h1>Location</h1>
+            <p id="modalLocation"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  -->
+    <div id="blob1"></div>
+    <div id="blob2"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>

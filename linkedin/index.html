@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Linkedin Feed</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Top Posts</h1>
+      </header>
+
+      <div id="postsDesktop">
+        <div id="left"></div>
+        <div id="right"></div>
+      </div>
+
+      <div id="postsMobile"></div>
+
+      <div id="postLoadMore">
+        <button onclick="loadPosts()">Load more</button>
+      </div>
+    </main>
+
+    <div id="modal">
+      <div id="modalBody">
+        <div id="modalImage">
+          <div id="modalArrows">
+            <button id="modalLeft">
+              <img src="./assets/angle-right.svg" alt="modal-right" />
+            </button>
+            <button id="modalRight">
+              <img src="./assets/angle-right.svg" alt="modal-right" />
+            </button>
+          </div>
+          <img
+            id="modalImageSrc"
+            src=""
+            alt="modal-image"
+            onerror="handleImageError(event)"
+          />
+        </div>
+        <div id="modalContent">
+          <div id="modalHeader">
+            <div id="modalDetails">
+              <div id="modalUserpic">
+                <img src="./assets/profile.jpg" />
+              </div>
+              <div id="modalUser">
+                <p id="modalName" class="fluid"></p>
+              </div>
+            </div>
+            <div>
+              <button id="modalClose" onclick="closeModal()">
+                <img src="./assets/xmark.svg" alt="share-icon" />
+              </button>
+            </div>
+          </div>
+          <p id="modalDesc"></p>
+          <div class="post__footer">
+            <div class="post__action">
+              <button>
+                <img src="./assets/thumbs-up.svg" alt="thumbsup-icon" />
+              </button>
+              <p class="fluid" id="modalLikes"></p>
+            </div>
+            <div class="post__action">
+              <button>
+                <img src="./assets/comments.svg" alt="comments-icon" />
+              </button>
+              <p class="fluid" id="modalComments"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="video">
+      <div id="videoClose">
+        <button onclick="closeVideo()">
+          <img src="./assets/xmark.svg" alt="video-close-svg" />
+        </button>
+      </div>
+      <iframe
+        id="videoEmbed"
+        width="560"
+        height="315"
+        src=""
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
